@@ -4,7 +4,10 @@ document.addEventListener('DOMContentLoaded', () =>{
   new Vue ({
     el: '#app',
     data: {
-      currencies: []
+      currencies: {},
+      amount: 0,
+      currencyIndex: "",
+      convertedAmount: 0
     },
     mounted(){
       this.fetchCurrencies()
@@ -15,6 +18,9 @@ document.addEventListener('DOMContentLoaded', () =>{
         .then(response => response.json())
         .then(data => this.currencies = data.rates)
       }
+    },
+    computed: {
+
     }
   })
 })

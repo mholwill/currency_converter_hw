@@ -8,15 +8,18 @@
   </head>
   <body>
     <div id="app">
-      
+      <h1>CURRENCY CONVERTER</h1>
+      <label for="how-much">Amount: </label>
+      <input name="how-much" type="number" v-model="amount">
+      <br>
+      <br>
+      <label for="select-currency">Select a currency:</label>
+      <select name="select-currency" v-model="currencyIndex">
+        <option :value="name" v-for="(currency, name) in this.currencies">{{name}}</option>
+      </select>
 
-
-
-
-
-
-
-
+      <h2>Rate: </h2>
+      <h3>{{convertedAmount}}</h3>
 
     </div>
   </body>
