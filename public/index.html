@@ -18,8 +18,11 @@
         <option :value="name" v-for="(currency, name) in this.currencies">{{name}}</option>
       </select>
 
-      <h2>Rate: </h2>
-      <h3>{{convertedAmount}}</h3>
+      <button @click="convertCurrency">Convert</button>
+
+      <div class="output" v-if="this.convertedAmount > 0">
+        <span><h3>Amount: {{convertedAmount}}</h3></span>
+      </div>
 
     </div>
   </body>
